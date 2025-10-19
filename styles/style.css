@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* ------ Variables ------ */
+
 :root {
     --main-font-size: 1.6rem;
     --header-font-size: 1.2rem;
     --content-title-font-size: 1.1rem;
+    --content-block-title-font-size: 1.2rem;
+    --main-ul-font-size: 1.2rem;
     --main-text-color: #b6b6b6;
     --list-style-main-color: #cf7b7b67;
     --boxshadow-small: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -21,10 +25,13 @@
     --content-blocks-item-bg-color: rgba(83, 71, 71, 0.5);
 }
 
+/* ------ Global Styles ------ */
+
 * {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    z-index: 0;
 }
 
 html,
@@ -46,6 +53,8 @@ body {
     margin: 0 auto;
 }
 
+/* ------ Header & Navigation ------ */
+
 .close-nav {
     content: "";
     display: none;
@@ -65,6 +74,7 @@ header {
     position: fixed;
     transition: 0.2s;
     font-size: var(--header-font-size);
+    z-index: 1;
 }
 
 .navbar {
@@ -75,7 +85,6 @@ header {
     margin: 0 auto;
     padding: 12px 32px;
     user-select: none;
-    z-index: 102;
 }
 
 .navbar .logo {
@@ -169,6 +178,8 @@ header {
     transform: translateY(-11px) rotate(-45deg);
 }
 
+/* ------ Sections & Content ------ */
+
 section {
     margin: var(--section-margin);
 }
@@ -196,29 +207,6 @@ section .content-title::after {
     border-radius: 2px;
 }
 
-#about {
-    margin-top: 100px;
-    font-size: 1.6rem;
-}
-
-#about .content {
-    min-height: 210px;
-}
-
-#about img {
-    float: left;
-    margin-right: 10px;
-    width: 210px;
-    border-radius: 10px;
-}
-
-#skills .content .content-blocks {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .content-blocks-item {
     margin: 10px;
     background-color: var(--content-blocks-item-bg-color);
@@ -230,7 +218,7 @@ section .content-title::after {
 
 .content-blocks-item ul {
     list-style: none;
-    font-size: 1.4rem;
+    font-size: var(--main-ul-font-size);
 }
 
 .content-blocks-item ul li {
@@ -238,7 +226,7 @@ section .content-title::after {
     background: #4e3939c4;
     margin-bottom: 8px;
     text-align: center;
-    padding: 2px 5px;
+    padding: 2px 30px;
     border-radius: 5px;
 }
 
@@ -276,6 +264,35 @@ section .content-title::after {
     margin: 10px auto 0 auto;
     border-radius: 2px;
 }
+
+/* ------ About Section ------ */
+
+#about {
+    margin-top: 100px;
+    font-size: 1.6rem;
+}
+
+#about .content {
+    min-height: 210px;
+}
+
+#about img {
+    float: left;
+    margin-right: 10px;
+    width: 210px;
+    border-radius: 10px;
+}
+
+/* ------ Skills Section ------ */
+
+#skills .content .content-blocks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
 
 
 @media (max-width: 700px) {
@@ -350,5 +367,21 @@ section .content-title::after {
 
     #skills .content .content-blocks-item:last-child {
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --main-font-size: 1rem;
+        --content-title-font-size: 1rem;
+        --main-ul-font-size: 1rem;
+    }
+
+    .content-blocks-item ul li {
+        padding: 4px 6px;
+    }
+
+    #skills .content-blocks-item ul li::after, #skills .content-blocks-item ul li::before {
+    display: none;
     }
 }
