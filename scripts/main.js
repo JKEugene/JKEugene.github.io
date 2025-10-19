@@ -3,6 +3,8 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 const closeNav = document.querySelector('.close-nav');
 
+self.automaticallyAdjustsScrollViewInsets = false;
+
 if(window.scrollY==0){
     header.style.top = '0';
 }
@@ -36,3 +38,4 @@ window.addEventListener('scroll', () => {
     }
     lastScrollTop = scrollTop;
 });
+
