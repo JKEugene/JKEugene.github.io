@@ -3,12 +3,6 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 const closeNav = document.querySelector('.close-nav');
 
-self.automaticallyAdjustsScrollViewInsets = false;
-
-if(window.scrollY==0){
-    header.style.top = '0';
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     burger.addEventListener('click', function() {
         navLinks.classList.toggle('open');
@@ -26,7 +20,8 @@ closeNav.addEventListener('click', function() {
 let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
+    console.log(scrollTop + ' | ' + lastScrollTop);
+    if (scrollTop > lastScrollTop && scrollTop > 0) {
         if (navLinks.classList.contains('open')) {
             navLinks.classList.remove('open');
             burger.classList.remove('active');
@@ -38,4 +33,3 @@ window.addEventListener('scroll', () => {
     }
     lastScrollTop = scrollTop;
 });
-
