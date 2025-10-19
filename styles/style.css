@@ -248,14 +248,14 @@ section .content-title::after {
     transform: translateY(-50%);
 }
 
-.content-block-title {
+.content-blocks-title {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.content-block-title::after {
+/* .content-blocks-title::after {
     content: '';
     display: block;
     width: 150px;
@@ -263,7 +263,7 @@ section .content-title::after {
     background: #6e1f1f;
     margin: 10px auto 0 auto;
     border-radius: 2px;
-}
+} */
 
 /* ------ About Section ------ */
 
