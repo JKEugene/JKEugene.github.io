@@ -21,7 +21,7 @@ let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     console.log(scrollTop + ' | ' + lastScrollTop);
-    if (scrollTop > lastScrollTop && scrollTop > 0) {
+    if (scrollTop > lastScrollTop && scrollTop > 5) {
         if (navLinks.classList.contains('open')) {
             navLinks.classList.remove('open');
             burger.classList.remove('active');
