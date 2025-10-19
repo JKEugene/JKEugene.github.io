@@ -3,6 +3,10 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 const closeNav = document.querySelector('.close-nav');
 
+if(window.scrollY==0){
+    header.style.top = '0';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     burger.addEventListener('click', function() {
         navLinks.classList.toggle('open');
