@@ -34,9 +34,10 @@ header {
     max-width: 1400px;
     margin: 0 auto;
     padding: 12px 32px;
+    user-select: none;
 }
 
-a.logo {
+.navbar .logo {
     background: rgba(83, 71, 71, 0.5);
     font-family: "JetBrains Mono", monospace;
     display: flex;
@@ -49,19 +50,19 @@ a.logo {
     transition: .2s;
 }
 
-a.logo:hover {
+.navbar .logo:hover {
     box-shadow: black 2px 2px 5px;
     transform: scale(1.1);
 }
 
-a.logo img {
+.navbar .logo img {
     height: 50px;
     width: auto;
     border-radius: 25px;
     box-shadow: black 2px 2px 2px;
 }
 
-a.logo span {
+.navbar .logo span {
     color: #e4bbbb;
     margin-left: 10px;
     margin-right: 5px;
@@ -142,6 +143,7 @@ section .content {
 }
 
 #about img {
+    float: left;
     margin-right: 15px;
     width: 200px;
     border-radius: 10px;
@@ -184,5 +186,12 @@ section .content {
         border-bottom: 1px solid #4e3939;
         padding: 15px 20px;
         margin-bottom: -1px;
+    }
+    #about img {
+        float: none;
+        margin: 0 auto 15px auto;
+        display: block;
+        width: 100%;
+        max-width: 300px;
     }
 }
