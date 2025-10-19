@@ -20,7 +20,7 @@ closeNav.addEventListener('click', function() {
 let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(scrollTop + ' | ' + lastScrollTop);
+    // console.log(scrollTop + ' | ' + lastScrollTop);
     if (scrollTop > lastScrollTop > 0) {
         if (navLinks.classList.contains('open')) {
             navLinks.classList.remove('open');
